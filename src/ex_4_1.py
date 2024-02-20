@@ -21,7 +21,7 @@ def num_shutdowns(logfile):
         lines = file.readlines()
     num_shutdowns = 0
     for line in lines:
-        if "shutdown initiated" in line:
+        if "Shutdown initiated" in line:
             num_shutdowns +=1
     return num_shutdowns
             
