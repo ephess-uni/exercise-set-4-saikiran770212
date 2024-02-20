@@ -15,9 +15,16 @@ FILENAME = get_data_file_path('messages.log')
 
 def num_shutdowns(logfile):
     """
-    Your docstring here.  Replace the pass keyword below with your implementation.
+    Determine the number of shutdown occurences in specified logfile
     """
-    pass
+    with open(logfile,'r') as file:
+        lines = file.readlines()
+    num_shutdowns = 0
+    for line in lines:
+        if "shutdown initiated" in line:
+            num_shutdowns +=1
+    return num_shutdowns
+            
 
 
 # >>>> The code below will call your function and print the results
